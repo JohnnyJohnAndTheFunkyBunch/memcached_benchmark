@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./loader -a ../twitter_dataset/twitter_dataset_30x -s servers.txt -g 0.8 -T 1 -c 32 -w 9 -e -r 1000
