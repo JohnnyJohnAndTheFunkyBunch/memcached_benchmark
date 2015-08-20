@@ -228,8 +228,10 @@ int processResponse(struct response* response, int final, double difftime){
   } else if(type == TYPE_INCR) {
     global_stats.incrs++;
   }
-
-  addSample(&global_stats.response_time, difftime);
+    // JOMA
+   if (type == TYPE_GET && errorCode == 0) {
+      addSample(&global_stats.response_time, difftime);
+   }
 
   pthread_mutex_unlock(&stats_lock);
 
